@@ -1,4 +1,6 @@
 #include <iostream>
+#include<ios>
+#include<iomanip>
 #define CPP2_PRIME_UPPER_LIMIT 1000000 //探索する値の上限値。
 
 using namespace std;
@@ -36,18 +38,17 @@ int nth_prime(unsigned int a, unsigned int d, unsigned int n) {
 	}
 }
 int main() {
-	cout << "367,186, 151" << " " << "A,92809" << " " << nth_prime(367, 186, 151) << endl;
-	cout << "179,10,203" << " " << "A,6709" << " " << nth_prime(179, 10, 203) << endl;
-	cout << "271,37,39" << " " << "A,12037" << " " << nth_prime(271, 37, 39) << endl;
-	cout << "103,230,1" << " " << "A,103" << " " << nth_prime(103, 230, 1) << endl;
-	cout << "27,104,185" << " " << "A,93523" << " " << nth_prime(27, 104, 185) << endl;
-	cout << "253,50,85" << " " << "A,14503" << " " << nth_prime(253, 50, 85) << endl;
-	cout << "1,1,1" << " " << "A,2" << " " << nth_prime(1, 1, 1) << endl;
-	cout << "9075,337,210" << " " << "A,899429" << " " << nth_prime(9075, 337, 210) << endl;
-	cout << "307,24,79" << " " << "A,5107" << " " << nth_prime(307, 24, 79) << endl;
-	cout << "331,221,177" << " " << "A,412717" << " " << nth_prime(331, 221, 177) << endl;
-	cout << "259,170,40" << " " << "A,22699" << " " << nth_prime(259, 170, 40) << endl;
-	cout << "269,58,102" << " " << "A,25673" << " " << nth_prime(269, 58, 102) << endl;
+	cout << left << setw(12) << "367,186, 151" << " " << left << setw(9) << "A,92809" << " " << left << setw(6) << nth_prime(367, 186, 151) << endl;
+	cout << left << setw(12) << "179,10,203" << " " << left << setw(9) << "A,6709" << " " << left << setw(6) << nth_prime(179, 10, 203) << endl;
+	cout << left << setw(12) << "271,37,39" << " " << left << setw(9) << "A,12037" << " " << left << setw(6) << nth_prime(271, 37, 39) << endl;
+	cout << left << setw(12) << "103,230,1" << " " << left << setw(9) << "A,103" << " " << left << setw(6) << nth_prime(103, 230, 1) << endl;
+	cout << left << setw(12) << "27,104,185" << " " << left << setw(9) << "A,93523" << " " << left << setw(6) << nth_prime(27, 104, 185) << endl;
+	cout << left << setw(12) << "253,50,85" << " " << left << setw(9) << "A,14503" << " " << left << setw(6) << nth_prime(253, 50, 85) << endl;
+	cout << left << setw(12) << "1,1,1" << " " << left << setw(9) << "A,2" << " " << left << setw(6) << nth_prime(1, 1, 1) << endl;
+	cout << left << setw(12) << "9075,337,210" << " " << left << setw(9) << "A,899429" << " " << left << setw(6) << nth_prime(9075, 337, 210) << endl;
+	cout << left << setw(12) << "307,24,79" << " " << left << setw(9) << "A,5107" << " " << left << setw(6) << nth_prime(307, 24, 79) << endl;
+	cout << left << setw(12) << "331,221,177" << " " << left << setw(9) << "A,412717" << " " << left << setw(6) << nth_prime(331, 221, 177) << endl;
+	cout << left << setw(12) << "259,170,40" << " " << left << setw(9) << "A,22699" << " " << left << setw(6) << nth_prime(259, 170, 40) << endl;
 	// 以下、同様に、入出力例通りになるか確認せよ。
 	cin.get();
 	cin.get();
