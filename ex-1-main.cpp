@@ -38,17 +38,17 @@ int nth_prime(unsigned int a, unsigned int d, unsigned int n) {
 	}
 }
 int main() {
-	cout << left << setw(12) << "367,186, 151" << " " << left << setw(9) << "A,92809" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(367, 186, 151) << endl;
-	cout << left << setw(12) << "179,10,203" << " " << left << setw(9) << "A,6709" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(179, 10, 203) << endl;
-	cout << left << setw(12) << "271,37,39" << " " << left << setw(9) << "A,12037" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(271, 37, 39) << endl;
-	cout << left << setw(12) << "103,230,1" << " " << left << setw(9) << "A,103" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(103, 230, 1) << endl;
-	cout << left << setw(12) << "27,104,185" << " " << left << setw(9) << "A,93523" << "@" << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(27, 104, 185) << endl;
-	cout << left << setw(12) << "253,50,85" << " " << left << setw(9) << "A,14503" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(253, 50, 85) << endl;
-	cout << left << setw(12) << "1,1,1" << " " << left << setw(9) << "A,2" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(1, 1, 1) << endl;
-	cout << left << setw(12) << "9075,337,210" << " " << left << setw(9) << "A,899429" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(9075, 337, 210) << endl;
-	cout << left << setw(12) << "307,24,79" << " " << left << setw(9) << "A,5107" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(307, 24, 79) << endl;
-	cout << left << setw(12) << "331,221,177" << " " << left << setw(9) << "A,412717" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(331, 221, 177) << endl;
-	cout << left << setw(12) << "259,170,40" << " " << left << setw(9) << "A,22699" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(259, 170, 40) << endl;
+	cout << left << setw(12) << "367,186, 151" << " " << left << setw(9) << "–Í”Í,92809" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(367, 186, 151) << endl;
+	cout << left << setw(12) << "179,10,203" << " " << left << setw(9) << "–Í”Í,6709" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(179, 10, 203) << endl;
+	cout << left << setw(12) << "271,37,39" << " " << left << setw(9) << "–Í”Í,12037" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(271, 37, 39) << endl;
+	cout << left << setw(12) << "103,230,1" << " " << left << setw(9) << "–Í”Í,103" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(103, 230, 1) << endl;
+	cout << left << setw(12) << "27,104,185" << " " << left << setw(9) << "–Í”Í,93523" << "@" << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(27, 104, 185) << endl;
+	cout << left << setw(12) << "253,50,85" << " " << left << setw(9) << "–Í”Í,14503" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(253, 50, 85) << endl;
+	cout << left << setw(12) << "1,1,1" << " " << left << setw(9) << "–Í”Í,2" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(1, 1, 1) << endl;
+	cout << left << setw(12) << "9075,337,210" << " " << left << setw(9) << "–Í”Í,899429" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(9075, 337, 210) << endl;
+	cout << left << setw(12) << "307,24,79" << " " << left << setw(9) << "–Í”Í,5107" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(307, 24, 79) << endl;
+	cout << left << setw(12) << "331,221,177" << " " << left << setw(9) << "–Í”Í,412717" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(331, 221, 177) << endl;
+	cout << left << setw(12) << "259,170,40" << " " << left << setw(9) << "–Í”Í,22699" << " " << "ŒvZŒ‹‰Ê" << " " << left << setw(6) << nth_prime(259, 170, 40) << endl;
 	// ˆÈ‰ºA“¯—l‚ÉA“üo—Í—á’Ê‚è‚É‚È‚é‚©Šm”F‚¹‚æB
 	cin.get();
 	cin.get();
