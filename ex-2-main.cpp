@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
+
 using namespace std;
+
 namespace cpp2 {
 	/* --------------------------------------------------------------------- */
 	/*
@@ -26,49 +29,17 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		mcxi(const std::string& s) : value_(0) {
-			int tmp = 1;
-			string a = "2";
-			for (auto pos = s.begin(); pos != s.end();pos++) {
-				if (*pos - '0' == 2 ) {
-					tmp = 2;
+			int digit = 0;
+			for (auto pos = s.begin(); pos != s.end(); ++pos) {
+				if (*pos >= '2' && *pos <= '9') {
+					digit = *pos - '0';
 				}
-				else if (*pos - '0' == 3) {
-					tmp = 3;
+				else {
+					auto u = unit(*pos);
+					value_ += max(digit, 1) * u;
+					digit = 0;
 				}
-				else if (*pos - '0' == 4) {
-					tmp = 4;
-				}
-				else if (*pos == '5') {
-					tmp = 5;
-				}
-				else if (*pos - '0' == 6) {
-					tmp = 6;
-				}
-				else if (*pos - '0' == 7) {
-					tmp = 7;
-				}
-				else if (*pos - '0' == 8) {
-					tmp = 8;
-				}
-				else if (*pos - '0' == 9) {
-					tmp = 9;
-				}
-				if (*pos == 'm') {
-					value_ += 1000 * tmp;
-					tmp = 1;
-				}
-				else if (*pos == 'c') {
-					value_ += 100 * tmp;
-					tmp = 1;
-				}
-				else if (*pos == 'x') {
-					value_ += 10 * tmp;
-					tmp = 1;
-				}
-				else if (*pos == 'i') {
-					value_ += 1 * tmp;
-					tmp = 1;
-				}
+				
 			}
 			cout << value_ << endl;
 		}
@@ -82,6 +53,9 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		mcxi operator+(const mcxi& rhs) {
+			int a = 0;
+			a = value_ + value_;
+			cout << a << endl;
 			return 0;
 		}
 
@@ -100,15 +74,34 @@ namespace cpp2 {
 
 	private:
 		int value_;
+
+		int unit(char c) {
+			if (c == 'm') {
+				c = 1000;
+			}
+			else if (c == 'c') {
+				c = 100;
+			}
+			else if (c == 'x') {
+				c = 10;
+			}
+			else if (c == 'i') {
+				c = 1;
+			}
+			return c;
+		}
 	};
-}
+	}
+
 
 int main() {
 	cpp2::mcxi a0("xi");
 	cpp2::mcxi b0("x9i");
-	auto result0 = a0 + b0;
-	std::cout << "3x" << " " << result0.to_string() << std::endl;
-
+	cin.get();
+	cin.get();
+	//auto result0 = a0 + b0;
+	//std::cout << "3x" << " " << result0.to_string() << std::endl;
+	/*
 	cpp2::mcxi a1("i");
 	cpp2::mcxi b1("9i");
 	auto result1 = a1 + b1;
@@ -153,4 +146,5 @@ int main() {
 	cpp2::mcxi b9("c2x8i");
 	auto result9 = a9 + b9;
 	std::cout << "9m9c9x9i" << " " << result9.to_string() << std::endl;
+	*/
 }
