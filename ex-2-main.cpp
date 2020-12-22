@@ -1,6 +1,14 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
+
 using namespace std;
+
+int a = 0;
+int b = 0;
+int c = 0;
+int m = 0;
+
 namespace cpp2 {
 	/* --------------------------------------------------------------------- */
 	/*
@@ -26,51 +34,26 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		mcxi(const std::string& s) : value_(0) {
-			int tmp = 1;
-			string a = "2";
-			for (auto pos = s.begin(); pos != s.end();pos++) {
-				if (*pos - '0' == 2 ) {
-					tmp = 2;
+			int digit = 0;
+			for (auto pos = s.begin(); pos != s.end(); ++pos) {
+				if (*pos >= '2' && *pos <= '9') {
+					digit = *pos - '0';
 				}
-				else if (*pos - '0' == 3) {
-					tmp = 3;
+				else {
+					auto u = unit(*pos);
+					value_ += max(digit, 1) * u;
+					digit = 0;
 				}
-				else if (*pos - '0' == 4) {
-					tmp = 4;
-				}
-				else if (*pos == '5') {
-					tmp = 5;
-				}
-				else if (*pos - '0' == 6) {
-					tmp = 6;
-				}
-				else if (*pos - '0' == 7) {
-					tmp = 7;
-				}
-				else if (*pos - '0' == 8) {
-					tmp = 8;
-				}
-				else if (*pos - '0' == 9) {
-					tmp = 9;
-				}
-				if (*pos == 'm') {
-					value_ += 1000 * tmp;
-					tmp = 1;
-				}
-				else if (*pos == 'c') {
-					value_ += 100 * tmp;
-					tmp = 1;
-				}
-				else if (*pos == 'x') {
-					value_ += 10 * tmp;
-					tmp = 1;
-				}
-				else if (*pos == 'i') {
-					value_ += 1 * tmp;
-					tmp = 1;
-				}
+				
 			}
-			cout << value_ << endl;
+			if (a == 0) {
+				b = value_;
+				a = 1;
+			}
+			else if (a == 1) {
+				c = value_;
+				a = 0;
+			}
 		}
 
 
@@ -82,7 +65,10 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		mcxi operator+(const mcxi& rhs) {
-			return 0;
+			auto res = this->value_ + rhs.value_;
+			cpp2::mcxi x("");
+			x.value_ = res;
+			return x;
 		}
 
 		/* ----------------------------------------------------------------- */
@@ -93,22 +79,94 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		std::string to_string() const {
-			string a = "a";
-			return a;
+			int copy = 0;
+			int ml = value_ / 1000;
+			//cout << ml << endl;
+			string mli;
+			if (ml > 1) {
+				mli = std::to_string(ml) + 'm';
+			}
+			else if(ml == 1){
+				mli = 'm';
+			}
+			else {
+
+			}
+			copy = value_ - ml * 1000;
+			string one1;
+			int one = copy / 100;
+			if (one > 1) {
+				one1 = std::to_string(one) + 'c';
+			}
+			else if (one == 1) {
+				one1 = 'c';
+			}
+			else {
+
+			}
+			int copy1 = copy - one * 100;
+			string ten1;
+			int ten = copy1 / 10;
+			if (ten > 1) {
+				ten1 = std::to_string(ten) + 'x';
+			}
+			else if (ten == 1) {
+				ten1 = 'x';
+			}
+			else {
+
+			}
+			int copy2 = copy1 - ten * 10;
+			string o1;
+			int o = copy2;
+			if (o > 1) {
+				o1 = std::to_string(o) + 'i';
+			}
+			else if (o == 1) {
+				o1 = 'i';
+			}
+			else {
+
+			}
+			string mix;
+			mix = mli + one1 + ten1 + o1;
+			return mix;
 		}
 
 
 	private:
 		int value_;
+
+		int unit(char c) {
+			switch(c) {
+				case 'm':
+					return 1000;
+					break;
+				case 'c':
+					return 100;
+					break;
+				case 'x':
+					return 10;
+					break;
+				case 'i':
+					return 1;
+					break;
+		}
+			
+		}
 	};
-}
+	}
+
 
 int main() {
+	
 	cpp2::mcxi a0("xi");
 	cpp2::mcxi b0("x9i");
 	auto result0 = a0 + b0;
+	
 	std::cout << "3x" << " " << result0.to_string() << std::endl;
-
+	
+	
 	cpp2::mcxi a1("i");
 	cpp2::mcxi b1("9i");
 	auto result1 = a1 + b1;
@@ -153,4 +211,6 @@ int main() {
 	cpp2::mcxi b9("c2x8i");
 	auto result9 = a9 + b9;
 	std::cout << "9m9c9x9i" << " " << result9.to_string() << std::endl;
+	cin.get();
+	cin.get();
 }
