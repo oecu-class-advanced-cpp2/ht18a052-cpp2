@@ -5,6 +5,7 @@
 using namespace std;
 
 
+
 namespace cpp2 {
 	/* --------------------------------------------------------------------- */
 	/*
@@ -40,18 +41,6 @@ namespace cpp2 {
 					value_ += max(digit, 1) * u;
 					digit = 0;
 				}
-				
-<<<<<<< HEAD
-			}
-			if (a == 0) {
-				b = value_;
-				a = 1;
-			}
-			else if (a == 1) {
-				c = value_;
-				a = 0;
-=======
->>>>>>> 3a7be6765956ffee0d1fb70b0e052513a1a3f97c
 			}
 		}
 
@@ -64,22 +53,15 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		mcxi operator+(const mcxi& rhs) {
-<<<<<<< HEAD
-			auto res = this->value_ + rhs.value_;
-			cpp2::mcxi x("");
-			x.value_ = res;
-			return x;
-=======
-			int a = 0;
-			a = value_ + value_;
-			cout << a << endl;
-			return 0;
->>>>>>> 3a7be6765956ffee0d1fb70b0e052513a1a3f97c
+			mcxi dest(*this);
+			dest.value_ += rhs.value_;
+			return dest;
 		}
 
 		/* ----------------------------------------------------------------- */
 		/*
 		to_string
+
 
 		現在の値を mcxi 記法に変換します。
 		*/
@@ -144,7 +126,6 @@ namespace cpp2 {
 		int value_;
 
 		int unit(char c) {
-<<<<<<< HEAD
 			switch(c) {
 				case 'm':
 					return 1000;
@@ -160,21 +141,6 @@ namespace cpp2 {
 					break;
 		}
 			
-=======
-			if (c == 'm') {
-				c = 1000;
-			}
-			else if (c == 'c') {
-				c = 100;
-			}
-			else if (c == 'x') {
-				c = 10;
-			}
-			else if (c == 'i') {
-				c = 1;
-			}
-			return c;
->>>>>>> 3a7be6765956ffee0d1fb70b0e052513a1a3f97c
 		}
 	};
 	}
@@ -184,19 +150,11 @@ int main() {
 	
 	cpp2::mcxi a0("xi");
 	cpp2::mcxi b0("x9i");
-<<<<<<< HEAD
 	auto result0 = a0 + b0;
 	
 	std::cout << "3x" << " " << result0.to_string() << std::endl;
 	
 	
-=======
-	cin.get();
-	cin.get();
-	//auto result0 = a0 + b0;
-	//std::cout << "3x" << " " << result0.to_string() << std::endl;
-	/*
->>>>>>> 3a7be6765956ffee0d1fb70b0e052513a1a3f97c
 	cpp2::mcxi a1("i");
 	cpp2::mcxi b1("9i");
 	auto result1 = a1 + b1;
@@ -241,10 +199,6 @@ int main() {
 	cpp2::mcxi b9("c2x8i");
 	auto result9 = a9 + b9;
 	std::cout << "9m9c9x9i" << " " << result9.to_string() << std::endl;
-<<<<<<< HEAD
 	cin.get();
 	cin.get();
-=======
-	*/
->>>>>>> 3a7be6765956ffee0d1fb70b0e052513a1a3f97c
 }
